@@ -47,6 +47,10 @@ img {
     margin-bottom: 20px; /* Added margin at the bottom of images */
 }
 
+.skip {
+    display: none;
+}
+
 /* Header Styles */
 h1 {
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -67,7 +71,7 @@ h2, h3 {
 }
 
 h3 {
-    color: rgb(112, 100, 186); /* Softest Blue for h3 */
+    color: rgb(72, 49, 221); /* Softest Blue for h3 */
     font-size: 20px;
 }
 
@@ -86,14 +90,6 @@ span {
     margin-bottom: 5px; /* Add some spacing between the lines if desired */
 }
 
-.skip {
-    display: none;
-}
-
-a[href="#main"] {
-    display: none;
-}
-
 li a.active {
     background-color: #003366; /* Darker blue background for active links */
     color: #fff; /* White text color for active links */
@@ -107,19 +103,26 @@ ol {
     list-style-type: decimal;
 }
 
+
+@keyframes transition-color {
+    from {
+        background-color: rgb(255, 191, 128); /* Light Orange */
+    }
+    to {
+        background-color: rgb(128, 216, 255); /* Light Sky Blue */
+    }
+}
+
+.header-animation {
+    animation-name: transition-color;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
 .container {
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
-
-/* .container {
-    display:grid;
-    grid-template-columns: 300px 500px 300px;
-    grid-template-columns: 20% 40% 20%;
-    grid-template-columns: 1fr 2fr 1fr;
-    justify-content: center;
-    align-items: space-between;
-} */
 
 .container img:nth-child(1) {
     grid-column: 1;
@@ -166,25 +169,6 @@ ol {
     grid-row: 2;
 }
 
-/* .container img:nth-child(4) {
-    grid-column: 2;
-    grid-row: 1;
-} */
-
-@keyframes transition-color {
-    from {
-        background-color: rgb(255, 191, 128); /* Light Orange */
-    }
-    to {
-        background-color: rgb(128, 216, 255); /* Light Sky Blue */
-    }
-}
-
-.header-animation {
-    animation-name: transition-color;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-}
 
 @media (prefers-reduced-motion: reduce) {
     .header-animation {animation: none;}
